@@ -5,19 +5,20 @@ import pandas as pd
 
 def run():
   '''
+  data = read_csv.read_csv('data.csv')
   data = list(filter(lambda item : item['Continent'] == 'South America',data))
   countries = list(map(lambda x: x['Country'], data))
   percentages = list(map(lambda x: x['World Population Percentage'], data))
   '''
 
-  df = pd.read_csv('data.csv')
-  df = df[df['Continent'] == 'Africa']
+  df = pd.read_csv('data.csv') #la linea 8 se sustitule por esta otra
+  df = df[df['Continent'] == 'Africa'] #la linea 9 se sustitule por esta otra
 
-  countries = df['Country'].values
-  percentages = df['World Population Percentage'].values
+  countries = df['Country'].values #la linea 10 se sustitule por esta otra
+  percentages = df['World Population Percentage'].values #la linea 11 se sustitule por esta otra
   charts.generate_pie_chart(countries, percentages)
 
-  data = read_csv.read_csv('data.csv')
+  data = read_csv.read_csv('data.csv') # se duplico de la linea 8
   country = input('Type Country => ')
   print(country)
 
